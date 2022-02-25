@@ -9,7 +9,7 @@ export default {
   name: 'App',
   setup(){
     const asideVisible = ref(false) //set
-    provide('xxx',asideVisible)
+    provide('asideVisible',asideVisible)
   }
 }
 </script>
