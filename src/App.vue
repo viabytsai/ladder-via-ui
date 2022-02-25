@@ -1,17 +1,10 @@
 <template>
-  <div>123</div>
-  <Tsai/>
+  <div>导航栏 | <router-link to="/">Tsai</router-link></div>
+  <router-view/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Tsai from  './components/Tsai.vue'
 export default {
   name: 'App',
-  components: {
-    // HelloWorld 缩写 实际上是HelloWorld:HelloWorld
-    Tsai
-
-  }
 }
 </script>
