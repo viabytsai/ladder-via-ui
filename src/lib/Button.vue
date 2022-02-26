@@ -1,7 +1,9 @@
 <template>
   <button class="ladder-button"
           :class="classes"
-  >
+          :disabled="disabled">
+    <span class="ladder-loadingIndicator"
+          v-if="loading"></span>
     <slot></slot>
   </button>
 </template>
@@ -18,18 +20,31 @@ export default {
     size: {
       type: String,
       default: 'normal',
-    }
+    },
+    level:{
+      type: String,
+      default: 'normal',
+    },
+    disabled:{
+      type:Boolean,
+      default:false,
+    },
+    loading:{
+      type:Boolean,
+      default:false,
+    },
   },
   setup(props) {
-    const {theme, size} = props;
+    const {theme, size, level} = props;
     const classes = computed(
         () => {
           return {
             [`ladder-theme-${theme}`]: theme,
             [`ladder-size-${size}`]: size,
+            [`ladder-level-${level}`]: level,
           };
         });
-    return {classes}
+    return {classes};
   }
 };
 </script>
@@ -39,6 +54,8 @@ $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
+$red: red;
+$grey:grey;
 $radius: 4px;
 .ladder-button {
   box-sizing: border-box;
@@ -91,18 +108,75 @@ $radius: 4px;
       background: darken(white, 5%);;
     }
   }
-  &.ladder-theme-button{
-    &.ladder-size-big{
+
+  &.ladder-theme-button {
+    &.ladder-size-big {
       font-size: 24px;
       height: 48px;
     }
-    &.ladder-size-small{
+
+    &.ladder-size-small {
       font-size: 12px;
       height: 20px;
       padding: 0 4px;
+    }
+
+    &.ladder-level-main {
+      background: $blue;
+      color: white;
+      border-color: $blue;
+
+      &:hover,
+      &:focus {
+        background: darken($blue, 10%);
+        border-color: darken($blue, 10%);
+      }
+    }
+
+    &.ladder-level-danger {
+      background: $red;
+      border-color: $red;
+      color: white;
+
+      &:hover,
+      &:focus {
+        background: darken($red, 10%);
+        border-color: darken($red, 10%);
+      }
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.ladder-theme-link, &.ladder-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
+  > .ladder-loadingIndicator{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: ladder-spin 1s infinite linear;
   }
 }
+@keyframes ladder-spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
 }
-
-
 </style>
