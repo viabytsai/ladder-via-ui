@@ -3,8 +3,14 @@
   <Dialog v-model:visible="x"
           :closeOnClickOverlay="false"
           :ok="f1">
-    <div>内容1</div>
-    <div>内容2</div>
+    <template v-slot:title>
+      <div>标题</div>
+    </template>
+    <template v-slot:content>
+      <div>内容1</div>
+      <div>内容2</div>
+    </template>
+
   </Dialog>
 </template>
 

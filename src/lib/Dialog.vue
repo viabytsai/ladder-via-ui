@@ -5,12 +5,12 @@
     <div class="ladder-dialog-wrapper">
       <div class="ladder-dialog">
         <header>
-          {{title}}
+          <slot name="title"/>
           <span class="ladder-dialog-close"
                 @click="close"></span>
         </header>
         <main>
-        <slot/>
+        <slot name="content"/>
         </main>
         <footer>
           <Button level="main"
