@@ -1,6 +1,8 @@
 <template>
   <Button @click="toggle">toggle</Button>
-  <Dialog :visible="x"></Dialog>
+  <Dialog v-model:visible="x"
+          :closeOnClickOverlay="false"
+          :ok="f1"></Dialog>
 </template>
 
 <script lang='ts'>
@@ -15,7 +17,8 @@ export default {
     const toggle = () => {
       x.value = !x.value;
     };
-    return {x, toggle};
+    const f1= ()=>{return false} //让ok按钮无法关闭
+    return {x, toggle,f1};
   }
 };
 </script>
