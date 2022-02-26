@@ -2,7 +2,10 @@
   <Button @click="toggle">toggle</Button>
   <Dialog v-model:visible="x"
           :closeOnClickOverlay="false"
-          :ok="f1"></Dialog>
+          :ok="f1">
+    <div>内容1</div>
+    <div>内容2</div>
+  </Dialog>
 </template>
 
 <script lang='ts'>

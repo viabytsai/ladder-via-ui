@@ -5,13 +5,12 @@
     <div class="ladder-dialog-wrapper">
       <div class="ladder-dialog">
         <header>
-          标题
+          {{title}}
           <span class="ladder-dialog-close"
                 @click="close"></span>
         </header>
         <main>
-          <p>第一行字</p>
-          <p>第一行字</p>
+        <slot/>
         </main>
         <footer>
           <Button level="main"
@@ -30,6 +29,10 @@ import Button from './Button.vue';
 export default {
   components: {Button},
   props: {
+    title:{
+      type:String,
+      default:'默认标题'
+    },
     visible: {
       type: Boolean,
       default: false
@@ -45,7 +48,7 @@ export default {
       type: Function
     }
   },
-  setup(props, context) {
+  setup(props, context,) {
     const close = () => {
       context.emit('update:visible', false);
     };
