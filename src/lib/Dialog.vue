@@ -1,26 +1,29 @@
 <template>
-  <template v-if="visible">
-    <div class="ladder-dialog-overlay"
-         @click="onClickOverlay"></div>
-    <div class="ladder-dialog-wrapper">
-      <div class="ladder-dialog">
-        <header>
-          <slot name="title"/>
-          <span class="ladder-dialog-close"
-                @click="close"></span>
-        </header>
-        <main>
-        <slot name="content"/>
-        </main>
-        <footer>
-          <Button level="main"
-                  @click="ok">OK
-          </Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+  <Teleport to="body">
+    <template v-if="visible">
+      <div class="ladder-dialog-overlay"
+           @click="onClickOverlay"></div>
+      <div class="ladder-dialog-wrapper">
+        <div class="ladder-dialog">
+          <header>
+            <slot name="title"/>
+            <span class="ladder-dialog-close"
+                  @click="close"></span>
+          </header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button level="main"
+                    @click="ok">OK
+            </Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
-  </template>
+    </template>
+  </Teleport>
+
 </template>
 
 <script lang='ts'>
