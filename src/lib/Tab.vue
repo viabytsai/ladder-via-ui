@@ -1,5 +1,7 @@
 <template>
-<div>我是Tab</div>
+<div>
+  <slot/>
+</div>
 </template>
 
 <script lang='ts'>
