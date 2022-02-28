@@ -47,7 +47,9 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-
+:deep(.nav){
+  background-color: #fff;
+}
 .layout {
   display: flex;
   flex-direction: column;
