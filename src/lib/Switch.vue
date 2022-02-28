@@ -5,9 +5,6 @@
 >
   <span></span>
 </button>
-<div>
-  {{value}}
-</div>
 </template>
 
 <script lang='ts'>
@@ -48,7 +45,8 @@ $h2:$h - 4px;
     transition: left 250ms;
   }
   &.ladder-checked{
-    background: blue;}
+    background: #b7c1b6;
+  }
   &.ladder-checked > span {
     left: calc(100% - #{$h2} - 2px );
   }

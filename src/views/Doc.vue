@@ -47,6 +47,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -57,9 +58,11 @@ export default {
   > .content {
     flex-grow: 1;
     padding-top: 60px;
-    padding-left: 156px;
+    padding-left: 312px;
+    padding-right: 312px;
     @media (max-width: 500px) {
       padding-left: 0;
+      padding-right: 0;
     }
   }
 }
@@ -75,19 +78,39 @@ export default {
   }
 }
 aside {
-  background: lightblue;
-  width: 150px;
+  width: 240px;
   position: fixed;
-  top: 0;
+  top: 55px;
   left: 0;
-  padding: 70px 16px 16px;
+  padding:16px 0;
   height: 100%;
+  background-color: #f9f9f9;
   > h2 {
+    font-weight: 700;
+    font-size: 16px;
     margin-bottom: 4px;
+    padding: 0 16px;
   }
   > ol {
     > li {
-      padding: 4px 0;
+      >a{
+        position: relative;
+        display: block;
+        padding: 10px 0 10px 25px;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .router-link-active{
+        background:#e0e5df;
+      }
+      .router-link-active::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        border-right: 3px solid #7d8971;
+      }
     }
   }
 }
