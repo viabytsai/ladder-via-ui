@@ -1,5 +1,4 @@
 <template>
-<!--@input="y=$event"-->
 <Switch v-model:value="bool" />
 </template>
 
