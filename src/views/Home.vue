@@ -43,6 +43,8 @@ $green:#8ba48b;
 }
 .topnavAndBanner{
   background: linear-gradient(145deg, rgba(224,229,223,1) 0%, rgba(181,196,177,1) 100%);
+  clip-path: ellipse(80% 60% at 50% 40%);
+
 }
 .banner{
   padding: 100px 0;
