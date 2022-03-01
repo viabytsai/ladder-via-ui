@@ -1,13 +1,13 @@
 <template>
 <div>
   <h1>示例1</h1>
-  <Button theme="button">button</Button>
-  <Button theme="link">link</Button>
-  <Button theme="text">text</Button>
+  <Button theme="button">默认按钮</Button>
+  <Button theme="link">链接按钮</Button>
+  <Button theme="text">文字按钮</Button>
   <h1>示例2</h1>
-  <Button size="big">大</Button>
-  <Button>中</Button>
-  <Button size="small">小</Button>
+  <Button size="big">大号按钮</Button>
+  <Button>默认按钮</Button>
+  <Button size="small">小号按钮</Button>
   <h1>示例3</h1>
   <Button level="danger">危险按钮</Button>
   <Button level="main">普通按钮</Button>

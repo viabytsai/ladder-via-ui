@@ -1,64 +1,72 @@
 <template>
-  <div>
-    <h1>Switch 组件示例 </h1>
-    <div class="demo">
-      <h2>常规用法</h2>
-      <div class="demo-component">
-        <component :is="Switch1Demo"></component>
-      </div>
-      <div class="demo-actions">
-        <Button>查看代码</Button>
-      </div>
-      <div class="demo-code" >
-        <pre class="language-html" v-html="Prism.highlight(Switch1Demo.__sourceCode,Prism.languages.html,'html')"></pre>
-      </div>
+  <div class="container">
+    <div class="demo-container">
+      <h1>Switch 组件示例 </h1>
+      <Demo :component="Switch1Demo"></Demo>
+    </div>
+    <div class="demo-attr">
+      <h2>Attributes</h2>
+      <table class="demo-attr-table">
+        <thead>
+        <tr>
+          <th class="demo-attr-table-title">参数</th>
+          <th class="demo-attr-table-title">说明</th>
+          <th class="demo-attr-table-title">类型</th>
+          <th class="demo-attr-table-title">可选值</th>
+          <th class="demo-attr-table-title">默认值</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="demo-attr-table-title td">value</td>
+          <td class="demo-attr-table-title td">是否选中</td>
+          <td class="demo-attr-table-title td">boolean</td>
+          <td class="demo-attr-table-title td">false</td>
+          <td class="demo-attr-table-title td">false</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
 
 <script lang='ts'>
-import Button from '../lib/Button.vue'
 import Switch1Demo from './Switch1.demo.vue'
-import 'prismjs'
-import 'prismjs/themes/prism.css'
-const Prism = (window as any).Prism;
+import Demo from '../components/Demo.vue'
 export default {
-  components:{Button},
+  components:{Demo},
   setup(){
-    return{Switch1Demo,Prism}
+    return{Switch1Demo}
   }
 }
 </script>
 
 <style lang='scss' scoped>
-$border-color: #d9d9d9;
-.demo {
-  border: 1px solid $border-color;
-  margin: 16px 0 32px;
-
-  > h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
+.demo-attr{
+  >h2{
+    font-weight: 400;
+    color: #1f2f3d;
+    font-size: 22px;
+    margin: 55px 0 20px;
   }
-
-  &-component {
-    padding: 16px;
-  }
-
-  &-actions {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-  }
-
-  &-code {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-
-    > pre {
-      line-height: 1.1;
-      font-family: Consolas, 'Courier New', Courier, monospace;
-      margin: 0;
+  &-table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    font-size: 14px;
+    margin-bottom: 45px;
+    line-height: 1.5em;
+    &-title{
+      text-align: left;
+      white-space: nowrap;
+      color: #909399;
+      font-weight: 400;
+      border-bottom: 1px solid #dcdfe6;
+      padding: 15px;
+      max-width: 250px;
+    }
+    &-title.td{
+      color: #606266;
     }
   }
 }
