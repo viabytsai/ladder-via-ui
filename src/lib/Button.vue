@@ -122,14 +122,14 @@ $radius: 4px;
     }
 
     &.ladder-level-main {
-      background: $green;
+      background: #aeb2ad;
       color: white;
       border-color: $green;
 
       &:hover,
       &:focus {
-        background: darken($green, 10%);
-        border-color: darken($green, 10%);
+        background: darken(#aeb2ad, 10%);
+        border-color: darken(#aeb2ad, 10%);
       }
     }
 

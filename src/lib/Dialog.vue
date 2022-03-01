@@ -122,19 +122,22 @@ $border-color: #d9d9d9;
   }
 
   &-close {
-    position: relative;
+    position:relative;
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
-
+    &:hover{
+      background:#b7c1b6 ;
+      border-radius: 32px;
+    }
     &::before,
     &::after {
       content: '';
       position: absolute;
       height: 1px;
       background: black;
-      width: 100%;
+      width: 50%;
       top: 50%;
       left: 50%;
     }

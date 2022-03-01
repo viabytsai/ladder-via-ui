@@ -9,8 +9,9 @@
 <script lang='ts'>
 import Switch from '../lib/Switch.vue';
 import {ref} from 'vue';
+import Demo from './Demo.vue';
 export default {
-  components:{Switch},
+  components:{Demo, Switch},
   setup(){
     const bool = ref(false)
     return{bool}

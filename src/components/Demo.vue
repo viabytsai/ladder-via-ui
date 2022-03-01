@@ -1,6 +1,6 @@
 <template>
+  <h2>{{component.__sourceCodeTitle}}</h2>
   <div class="demo">
-    <h2>{{component.__sourceCodeTitle}}</h2>
     <div class="demo-component">
       <component :is="component"></component>
     </div>

@@ -33,8 +33,9 @@
 <script lang='ts'>
 import Switch1Demo from './Switch1.demo.vue'
 import Demo from '../components/Demo.vue'
+import Home from '../views/Home.vue';
 export default {
-  components:{Demo},
+  components:{Home, Demo},
   setup(){
     return{Switch1Demo}
   }
@@ -42,6 +43,9 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+h1{
+  padding-bottom: 20px;
+}
 .demo-attr{
   >h2{
     font-weight: 400;
