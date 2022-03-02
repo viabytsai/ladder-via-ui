@@ -64,6 +64,7 @@ h1{
   padding-bottom: 20px;
 }
 .demo-attr{
+  overflow-x: auto;
   >h2{
     font-weight: 400;
     color: #1f2f3d;
