@@ -7,7 +7,7 @@
     </router-link>
     <ul class="menu">
       <router-link to="/doc">文档</router-link>
-      <li>博客</li>
+      <li><a href="https://www.yuque.com/u25337406/pb4uud" target="_blank">博客</a></li>
     </ul>
     <svg class="toggleButton"
           @click="toggleAside"
@@ -63,7 +63,18 @@ export default {
     flex-wrap: nowrap;
     height: 36px;
     line-height: 36px;
-    > li {margin: 0 1em;}
+    > li {margin: 0 1em;
+      > a{
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    > a{
+      &:hover {
+        text-decoration: none;
+      }
+    }
     }
   > .toggleButton{
     display: inline-block;

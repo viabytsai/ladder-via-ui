@@ -6,7 +6,7 @@
         <h1>Ladder UI</h1>
         <h2>一个 Vue 3 组件库</h2>
         <p class="actions">
-          <a>Github</a>
+          <a href="https://github.com/viabytsai/ladder-via-ui" target="_blank">Github</a>
           <router-link to="/doc">开始使用</router-link>
         </p>
       </div>
@@ -130,7 +130,6 @@ $green: #8ba48b;
       display: inline-block;
       border-radius: 4px;
       padding: 8px 24px;
-
       &:hover {
         text-decoration: none;
       }

@@ -20,5 +20,5 @@ export default {
             Component.__sourceCodeTitle = ${JSON.stringify(title)}
           }`.trim();
         }
-    }
+    },
 };
