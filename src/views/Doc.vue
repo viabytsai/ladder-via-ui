@@ -2,7 +2,7 @@
   <div class="layout">
     <Topnav class="nav" :toggle-menu-button-visible="true"/>
     <div class="content">
-        <aside v-if="asideVisible">
+        <aside :class="{visible:asideVisible}">
           <h2>文档</h2>
           <ol>
             <li>
@@ -90,6 +90,11 @@ export default {
     }
   }
 }
+@media (min-width: 500px) {
+  aside{
+    transform: translateX(0px)!important;
+  }
+}
 aside {
   width: 240px;
   position: fixed;
@@ -98,6 +103,11 @@ aside {
   padding:16px 0;
   height: 100%;
   background-color: #f9f9f9;
+  transform: translateX(-240px);
+  transition: all 0.25s ease;
+  &.visible {
+    transform: translateX(0px);
+  }
   > h2 {
     font-weight: 700;
     font-size: 16px;

@@ -13,7 +13,7 @@ export default {
     const asideVisible = ref(width<=500 ? false : true) //set
     provide('asideVisible',asideVisible)
     if (width<=500){
-      router.afterEach(()=>{
+      router.afterEach(()=>{ //导航守卫
         asideVisible.value=false;
       })
     }
