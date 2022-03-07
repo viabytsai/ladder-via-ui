@@ -90,11 +90,7 @@ export default {
     }
   }
 }
-@media (min-width: 500px) {
-  aside{
-    transform: translateX(0px)!important;
-  }
-}
+
 aside {
   width: 240px;
   position: fixed;
@@ -103,11 +99,6 @@ aside {
   padding:16px 0;
   height: 100%;
   background-color: #f9f9f9;
-  transform: translateX(-240px);
-  transition: all 0.25s ease;
-  &.visible {
-    transform: translateX(0px);
-  }
   > h2 {
     font-weight: 700;
     font-size: 16px;
@@ -134,6 +125,16 @@ aside {
         height: 100%;
         border-right: 3px solid #7d8971;
       }
+    }
+  }
+}
+@media (max-width: 500px) {
+  aside{
+    width: 180px;
+    transition: all 0.25s ease;
+    transform: translateX(-180px);
+    &.visible {
+      transform: translateX(0px);
     }
   }
 }
